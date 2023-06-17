@@ -1,13 +1,15 @@
+import Navbar from "./scenes/Navbar"
+import { useState } from "react";
 import useMediaQuery from "./hooks/useMediaQuery";
 
 function App() {
-  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const [selectedPage, setSelectedPage] = useState("home")
+  const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)")
 
-  console.log(isDesktop)
   return (
     <div className="App">
-      
-    </div>
+      <Navbar selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
+      </div>
   );
 }
 
