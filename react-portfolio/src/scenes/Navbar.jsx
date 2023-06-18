@@ -18,14 +18,13 @@ const Link = ({page, selectedPage, setSelectedPage}) => {
   )
 }
 
-const Navbar = ({selectedPage, setSelectedPage}) => {
+const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}) => {
     const [isMenuToggled, setIsMenuToggled] = useState(false)
+    const navbarBackground = isTopOfPage ? "" : "bg-red" 
     const isAboveSmallScreens = useMediaQuery("(min-width: 768px)")
-    console.log("isAboveSmallScreens: ",isAboveSmallScreens)
-    console.log("isMenuToggled: ",isMenuToggled)
 
   return (
-    <nav className={'z-40 w-full fixed top-0 py-6'}>
+    <nav className={`${navbarBackground} z-40 w-full fixed top-0 py-6`}>
       <div className='flex items-center justify-between mx-auto w-5/6'>
         <h4 className='font-playfair text-3xl font-bold'>JE</h4>
 
